@@ -294,10 +294,10 @@
 	// Implement memory mapped register select and read logic generation
   assign S_AXI_RDATA = (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 2'h0) ? slv_reg0 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 2'h1) ? slv_reg1 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 2'h2) ? slv_reg2 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 2'h3) ? slv_reg3 :0;  
   // Add user logic here
-  wire[31:1] osc_a;
-  wire[31:1] osc_b;
-  wire[31:1] osc_c;
-  wire[31:1] osc_out;
+  (* dont_touch = "yes" *) wire[31:1] osc_a;
+  (* dont_touch = "yes" *) wire[31:1] osc_b;
+  (* dont_touch = "yes" *) wire[31:1] osc_c;
+  (* dont_touch = "yes" *) wire[31:1] osc_out;
   
   ring_oscillator ring_oscillator_a(.osc_out(osc_a));
   ring_oscillator ring_oscillator_b(.osc_out(osc_b));

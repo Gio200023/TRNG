@@ -1,7 +1,8 @@
+(* DONT_TOUCH = "yes" *)
 module ring_oscillator (
     output wire[31:1] osc_out
 );
-    wire[31:1] w1, w2, w3, w4, w5;
+    (* dont_touch = "yes" *) wire[31:1] w1, w2, w3, w4, w5;
 
     assign w1 = ~w5;
     assign w2 = ~w1;
